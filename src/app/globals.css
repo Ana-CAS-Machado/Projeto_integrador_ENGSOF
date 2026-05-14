@@ -1,8 +1,34 @@
 @import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
 
 :root {
-  --background: #ffffff;
+  --background: #F8F7F5;
   --foreground: #171717;
+
+  /* cores principais */
+    --color-primary:    #8BA341;
+    --color-secondary:  #4C6E24;
+    --green-100:        #214A22;    
+    --green-50:         #A9BE71;
+    --green-200:        #67912F;
+    --blue-400:         #00206E;
+
+   /* cores de suporte */
+   --black:          #000000;
+   --green-10:       #CDD5AB;
+   --white:          #FFFFFF;
+   --ice-white:      #F8F7F5;
+   --green-150:      #69912E;
+   --green-300:      #315D2C;
+   --blue-500:       #081C53;
+
+   /* Text */
+    --text-primary:   var(--blue-500);
+    --text-secondary: #575757;
+    --links:          #009DFF;
+    --text-muted: var(--background);
+
+
 }
 
 @theme inline {
@@ -12,15 +38,254 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, header, hgroup, 
+output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Garante que o conteúdo fique acima das folhas */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Configuração base das folhas */
+body::before,
+body::after,
+html::before,
+html::after {
+  content: "";
+  position: fixed;
+  width: 360px;
+  height: 300px;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    url("/assets/icons_2_2.svg"),
+    url("/assets/icons_2_10-removebg-preview2.svg");
+
+  background-repeat: no-repeat, no-repeat;
+
+  background-size:
+    170px auto,
+    230px auto;
+
+  opacity: 0.75;
+}
+
+/* Canto superior esquerdo */
+body::before {
+  top: 0;
+  left: 0;
+
+  background-position:
+    left 0 top 3rem,
+    left 1rem top 0;
+
+  transform: rotate(0deg);
+  transform-origin: center;
+}
+
+/* Canto superior direito */
+body::after {
+  top: 0;
+  right: 0;
+
+  background-position:
+    left 0 top 3rem,
+    left -1rem top 0;
+
+  transform: scaleX(-1) rotate(-2deg);
+  transform-origin: center;
+}
+
+/* Canto inferior esquerdo */
+html::before {
+  bottom: 0;
+  left: 0;
+
+  background-position:
+    left 0 bottom 3rem,
+    left 1rem bottom 0;
+
+  transform-origin: center;
+}
+
+/* Canto inferior direito */
+html::after {
+  bottom: 0;
+  right: 0;
+
+  background-position:
+    left 0 bottom -5rem,
+    left 0 bottom -10rem;
+
+  transform: scale(-1, -1) rotate(2deg);
+  transform-origin: center;
+}
+
+h2, h3, h4, h5, h6 {
+  color: var(--green-100);
+}
+
+h1{
+    color: var(--blue-400);
+}
+
+
+.site-footer {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+
+  background: var(--green-300);
+  color: white;
+
+  padding: 1.5rem 1.5rem;
+}
+
+/* Folhas decorativas dos cantos */
+.site-footer::before,
+.site-footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+
+  width: 249px;
+  height: 100%;
+
+  background-image: url("/assets/Frame3.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+/* Folha do canto esquerdo */
+.site-footer::before {
+  left: -6rem;
+}
+
+/* Folha do canto direito invertida */
+.site-footer::after {
+  right: -6rem;
+  transform: scaleX(-1);
+}
+
+.site-footer-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 672px);
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+  text-align: center;
+
+  font-size: 0.875rem;
+}
+
+.footer-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: white;
+}
+
+.footer-text span {
+  color: #a9be71;
+}
+
+.footer-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.footer-divider {
+  display: none;
+  width: 1px;
+  height: 2.25rem;
+  background: white;
+}
+
+@media (min-width: 640px) {
+  .site-footer {
+    padding-inline: 2.5rem;
+  }
+
+  .site-footer-content {
+    flex-direction: row;
+  }
+
+  .footer-divider {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer {
+    padding-inline: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer::before,
+  .site-footer::after {
+    width: 150px;
+    opacity: 0.22;
+  }
+
+  .site-footer::before {
+    left: -40px;
+  }
+
+  .site-footer::after {
+    right: -40px;
+  }
 }
