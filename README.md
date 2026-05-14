@@ -143,11 +143,11 @@ Em desenvolvimento.
 Etapas iniciais:
 
 - [x] Criação do projeto Next.js;
-- [ ] Criação da página inicial;
+- [x] Criação da página inicial;
 - [ ] Criação das telas do candidato;
 - [ ] Criação das telas do recrutador;
 - [x] Criação do protótipo no Figma;
-- [ ] Publicação na Vercel;
+- [x] Publicação na Vercel;
 - [ ] Finalização do artigo SN;
 - [ ] Finalização do banner.
 
