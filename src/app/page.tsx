@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-    <main className="relative flex h-[90.8vh]! flex-col overflow-hidden " style={{ maxWidth: "1420px", height: "auto", margin: "0 auto" }}>
+    <main className="relative flex lg:h-[90.8vh]! flex-col overflow-hidden " style={{ maxWidth: "1420px", height: "auto", margin: "0 auto" }}>
       <section className="relative z-10 flex flex-1 items-center px-6 py-10 sm:px-10 lg:px-16">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_1.2fr]">
           <div className="flex items-center justify-center lg:justify-start">
@@ -21,7 +21,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-2 px-4!">
                 <article className="p-7">
                     <p className="text-base leading-7">
                     A pré ECOLógica Consultoria atua na área ambiental, auxiliando empresas
@@ -49,14 +49,14 @@ export default function Home() {
 
       <section className="w-auto px-6 pb-10! sm:px-10 lg:px-16">
         <div className="w-full h-full flex flex-col items-center justify-center gap-12 sm:flex-row">
-          <Link href="/candidato/login" className="py-2! bg-[#315D2C] lg:px-18! rounded-full flex flex-col items-center justify-center gap-2 transition hover:-translate-y-1 hover:bg-[#214A22] sm:h-28">
+          <Link href="/candidato/login" className="py-2! bg-[#315D2C] lg:px-18! rounded-full flex flex-col items-center justify-center gap-2 transition hover:-translate-y-1 hover:bg-[#214A22] sm:h-28 max-md:w-full!">
             <h2 className="text-2xl font-bold text-white! sm:text-3xl">Inscreva-se</h2>
             <p className="text-sm font-light text-white/85 sm:text-base">
               Área do Candidato
             </p>
           </Link>
 
-          <Link href="/recrutador/login" className="py-2! bg-[#315D2C] lg:px-20! rounded-full flex flex-col items-center justify-center gap-2 transition hover:-translate-y-1 hover:bg-[#214A22] sm:h-28" >
+          <Link href="/recrutador/login" className="py-2! bg-[#315D2C] lg:px-20! rounded-full flex flex-col items-center justify-center gap-2 transition hover:-translate-y-1 hover:bg-[#214A22] sm:h-28 max-md:w-full!">
             <h2 className="text-2xl text-white! font-bold sm:text-3xl">Acesse</h2>
             <p className="text-sm font-light text-white/85 sm:text-base">
               Área do Recrutador
