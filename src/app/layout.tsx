@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 
+config.autoAddCss = false;
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -9,8 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "PRE Ecológica Consultoria",
-  description:
-    "Sistema de triagem, testes e acompanhamento de candidatos para consultoria ambiental.",
+  description: "Sistema de recrutamento e seleção para consultoria ambiental.",
 };
 
 export default function RootLayout({
@@ -20,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
-      </body>
+      <body className={inter.variable}>{children}</body>
     </html>
   );
 }
