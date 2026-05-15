@@ -116,8 +116,8 @@ Como o sistema possui várias telas e poderá evoluir para funcionalidades com b
 
 > Os links abaixo serão adicionados conforme o desenvolvimento avançar.
 
-- Protótipo no Figma: **[INSERIR LINK DO FIGMA]**
-- Deploy na Vercel: **[INSERIR LINK DA VERCEL]**
+- Protótipo no Figma: **[LINK DO FIGMA](https://www.figma.com/design/TQPN8YgGvek4oCDnpZYRTu/facul?node-id=3315-2&p=f&t=MKRnTnP8Yjt3I1SG-0)**
+- Deploy na Vercel: **[LINK DA VERCEL](https://projeto-integrador-engsof.vercel.app/)**
 - Repositório no GitHub: **[LINK DO GITHUB](https://github.com/Ana-CAS-Machado/Projeto_integrador_ENGSOF.git)**
 - Artigo SN: **[INSERIR LINK OU CAMINHO DO ARQUIVO]**
 - Banner CONTEEX: **[INSERIR LINK OU CAMINHO DO ARQUIVO]**
