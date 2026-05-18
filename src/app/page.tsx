@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
+    <div className="candidato-area">
     <main className="relative flex lg:h-[90.8vh]! flex-col overflow-hidden " style={{ maxWidth: "1420px", height: "auto", margin: "0 auto" }}>
       <section className="relative z-10 flex flex-1 items-center px-6 py-10 sm:px-10 lg:px-16">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_1.2fr]">
@@ -66,6 +66,6 @@ export default function Home() {
       </section>
     </main>
     <Footer />
-    </>
+    </div>
   );
 }

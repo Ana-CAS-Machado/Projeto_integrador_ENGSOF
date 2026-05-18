@@ -1,21 +1,21 @@
-type InputProps = {
-  label: string;
-  type?: string;
-  placeholder: string;
-  autoComplete?: string;
-};
+import * as React from 'react'
 
-export default function Input({
-  label,
-  type = "text",
-  placeholder,
-  autoComplete,
-}: InputProps) {
+import { cn } from '@/lib/utils'
+
+function Input({ className, type, ...props }: React.ComponentProps<'input'>) {
   return (
-    <label className="flex flex-col gap-2">
-      <span className="text-base text-[#010101]">{label}</span>
-
-      <input type={type} placeholder={placeholder} autoComplete={autoComplete} className="h-12 rounded-lg border border-[#d9d9d9] bg-white px-4 text-sm text-[#010101] outline-none transition placeholder:text-[#9a9a9a] focus:border-[#67912F] focus:ring-4 focus:ring-[#A9BE71]/20"/>
-    </label>
-  );
+    <input
+      type={type}
+      data-slot="input"
+      className={cn(
+        'file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+        'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+        'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+        className,
+      )}
+      {...props}
+    />
+  )
 }
+
+export { Input }
